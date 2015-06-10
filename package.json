@@ -1,0 +1,27 @@
+{
+  "name": "tproto",
+  "private": true,
+  "scripts": {
+    "start": "make"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babelify": "^6.3.0",
+    "brfs": "^1.4.1",
+    "browserify": "^11.1.0",
+    "less": "^2.5.1",
+    "mocha": "*",
+    "standard": "*",
+    "watchify": "^3.4.0"
+  },
+  "dependencies": {
+    "blacklist": "^1.1.2",
+    "classnames": "^2.0.0",
+    "cordova-dialogs": "^1.0.0",
+    "lorem-ipsum": "^1.0.3",
+    "react": "^0.13.3",
+    "react-sentry": "^1.0.2",
+    "react-tappable": "0.6.0",
+    "react-timers": "^5.0.0"
+  }
+}

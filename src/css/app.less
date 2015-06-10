@@ -1,0 +1,158 @@
+.display-flex {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.flex-direction(@value: row) {
+	-webkit-flex-direction: @value;
+	-ms-flex-direction: @value;
+	flex-direction: @value;
+}
+.flex(@fg: 1, @fs: '', @fb: '') {
+	-webkit-flex: @fg @fs @fb;
+	-ms-flex: @fg @fs @fb;
+	flex: @fg @fs @fb;
+}
+
+
+// common
+html,
+body {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+#app {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+
+button {
+	background: rgba(255, 255, 255, 0.9);
+	border: none;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+// components
+.Header {
+	.display-flex();
+	align-items: center;
+	background: rgba(0, 128, 255, 0.5);
+	color: white;
+	height: 50px;
+	text-align: center;
+
+	.Header__text {
+		// background: rgba(0, 0, 0, 0.3);
+		line-height: 3;
+	}
+
+	.Header__group {
+		// background: rgba(0, 0, 0, 0.1);
+		height: 100%;
+	}
+
+	.Header__button, button {
+		// background: rgba(0, 0, 0, 0.5);
+		background: none;
+		box-shadow: none;
+		flex: 1;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.Footer {
+	.display-flex();
+	align-items: center;
+	background-color: rgba(255, 0, 0, 0.4);
+	font-size: 12px;
+	height: 40px;
+	text-align: center;
+
+	button {
+		background: rgba(255, 255, 255, 0.1);
+		color: white;
+
+		margin-left: 1px;
+		margin-right: 1px;
+
+		flex: 1;
+		height: 100%;
+	}
+
+	button.is-selected {
+		background: rgba(255, 255, 255, 0.4);
+	}
+}
+
+.list-item {
+	.display-flex();
+	.flex-direction(column);
+	.flex(1,1,0);
+
+	button {
+		height: 3em;
+		width: 100%;
+	}
+}
+
+// ///////////////////////////////////
+
+.ViewController {
+	background-color: black;
+	flex: 1 1 0;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.View {
+	.display-flex();
+	.flex-direction(column);
+	position: absolute;
+
+	height: 100%;
+	width: 100%;
+
+	line-height: 1; // reset. default line-height is for readable content not apps
+	overflow: hidden;
+
+	// stop weird text rendering issue after transform/animation end
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	// prepare the element for animation
+	transform: translateZ(0);
+}
+
+// ///////////////////////////////////
+
+.View         { background: rgb(128, 128, 128); }
+.View--about  { background: rgb(255, 255, 255); }
+.View--error  { background: rgb(255, 0, 0); }
+.View--main   { background: rgb(255, 255, 0); }
+.View--signin { background: rgb(224, 224, 224); }
+.View--detail { background: rgb(128, 128, 128); }
+.View--now-playing {
+	align-items: center;
+	background: rgb(32, 32, 32);
+	line-height: 4;
+	text-align: center;
+
+	.list-item {
+		line-height: 1;
+	}
+
+	.playing { color: white; }
+	.queued { color: grey; }
+}
+
+// ///////////////////////////////////
+
+@import "./animations.less";
+
