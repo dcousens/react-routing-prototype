@@ -85,7 +85,7 @@ let VPrivacy = React.createClass({
 
     return (
       <div className={className}>
-        <Header.Proxy title='Privacy' primary={this.gotoPreviousView} />
+        <Header.Proxy title='Privacy' primaryOnTap={this.gotoPreviousView} />
         <p>{loremIpsum()}</p>
       </div>
     )
@@ -107,7 +107,7 @@ let VAboutMenu = React.createClass({
 
     return (
       <div className={className}>
-        <Header.Proxy title='About' primary={this.gotoPreviousView} />
+        <Header.Proxy title='About' primaryOnTap={this.gotoPreviousView} />
 
         <li>
           <button onClick={this.gotoEULA}>EULA</button>
