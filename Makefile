@@ -33,7 +33,7 @@ www/js/react.js: node_modules
 
 build-less: www/css/app.css
 
-www/css/app.css: node_modules src/css/app.less
+www/css/app.css: node_modules src/css/*.less
 	mkdir -p www/css
 	lessc src/css/app.less > www/css/app.css
 
