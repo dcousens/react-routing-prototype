@@ -54,6 +54,7 @@ li {
 	color: white;
 	height: 50px;
 	text-align: center;
+	transform: translateZ(0);
 
 	.Header__text {
 		// background: rgba(0, 0, 0, 0.3);
@@ -82,6 +83,7 @@ li {
 	font-size: 12px;
 	height: 40px;
 	text-align: center;
+	transform: translateZ(0);
 
 	button {
 		background: rgba(255, 255, 255, 0.1);
@@ -108,6 +110,7 @@ li {
 	overflow: hidden;
 	position: relative;
 	width: 100%;
+	transform: translateZ(0);
 }
 
 .View {
@@ -120,13 +123,11 @@ li {
 
 	line-height: 1; // reset. default line-height is for readable content not apps
 	overflow: hidden;
+	transform: translateZ(0);
 
 	// stop weird text rendering issue after transform/animation end
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
-	// prepare the element for animation
-	transform: translateZ(0);
 }
 
 // ///////////////////////////////////
