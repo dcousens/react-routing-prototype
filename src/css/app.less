@@ -35,6 +35,16 @@ button {
 	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 
+li {
+	.display-flex();
+	.flex-direction(column);
+	.flex(1,1,0);
+
+	button {
+		height: 3em;
+		width: 100%;
+	}
+}
 
 // components
 .Header {
@@ -86,17 +96,6 @@ button {
 
 	button.is-selected {
 		background: rgba(255, 255, 255, 0.4);
-	}
-}
-
-.list-item {
-	.display-flex();
-	.flex-direction(column);
-	.flex(1,1,0);
-
-	button {
-		height: 3em;
-		width: 100%;
 	}
 }
 

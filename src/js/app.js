@@ -45,10 +45,10 @@ let VSignin = React.createClass({
     return (
       <div className={className}>
         <Header title='Prototype'/>
-        <div className='list-item'>
+        <li>
           <button onClick={this.gotoBrowser}>Enter</button>
           <button onClick={this.gotoLogout}>Logout (invalid link)</button>
-        </div>
+        </li>
       </div>
     )
   }
@@ -109,10 +109,10 @@ let VAboutMenu = React.createClass({
       <div className={className}>
         <Header.Proxy title='About' primary={this.gotoPreviousView} />
 
-        <div className='list-item'>
+        <li>
           <button onClick={this.gotoEULA}>EULA</button>
           <button onClick={this.gotoPrivacy}>Privacy</button>
-        </div>
+        </li>
       </div>
     )
   }
@@ -156,9 +156,9 @@ let VError = React.createClass({
     return (
       <div className={className}>
         <Header title='Oooops' />
-        <div className='list-item'>
+        <li>
           <button onClick={this.goHome}>Return to signin</button>
-        </div>
+        </li>
       </div>
     )
   }
@@ -196,9 +196,9 @@ let VArtistList = React.createClass({
       <div className={className}>
         <Header.Proxy title='Artists' secondary='Now Playing' secondaryOnTap={this.gotoNowPlaying} />
 
-        <div className='list-item'>
+        <li>
           {artistsDom}
-        </div>
+        </li>
       </div>
     )
   }
@@ -234,10 +234,10 @@ let VArtistDetail = React.createClass({
       <div className={className}>
         <Header.Proxy title='Artist Detail' primaryOnTap={this.gotoPreviousView} secondary='Now Playing' secondaryOnTap={this.gotoNowPlaying} />
 
-        <div className='list-item'>
+        <li>
           <button onClick={this.playShuffledSongs}>Shuffle play</button>
           <button onClick={this.playASong}>Play song 1</button>
-        </div>
+        </li>
       </div>
     )
   }
@@ -284,9 +284,9 @@ let VLatest = React.createClass({
       <div className={className}>
         <Header.Proxy title='Latest' secondary='Now Playing' secondaryOnTap={this.gotoNowPlaying} />
 
-        <div className='list-item'>
+        <li>
           <button onClick={this.gotoSignIn}>Signin</button>
-        </div>
+        </li>
       </div>
     )
   }
@@ -317,9 +317,9 @@ let VPlaylistDetail = React.createClass({
       <div className={className}>
         <Header.Proxy title={name} primaryOnTap={this.gotoPreviousView} secondary='Now Playing' secondaryOnTap={this.gotoNowPlaying} />
 
-        <div className='list-item'>
+        <li>
           <button onClick={this.playPlaylist}>Play '{name}' playlist</button>
-        </div>
+        </li>
       </div>
     )
   }
@@ -352,9 +352,9 @@ let VPlaylistList = React.createClass({
       <div className={className}>
         <Header.Proxy title='Playlists' secondary='Now Playing' secondaryOnTap={this.gotoNowPlaying} />
 
-        <div className='list-item'>
+        <li>
           {playlistsDom}
-        </div>
+        </li>
       </div>
     )
   }
@@ -409,9 +409,9 @@ let VSongs = React.createClass({
       <div className={className}>
         <Header.Proxy title='Songs' secondary='Now Playing' secondaryOnTap={this.gotoNowPlaying} />
 
-        <div className='list-item'>
+        <li>
           <button onClick={this.playShuffledSongs}>Shuffle play</button>
-        </div>
+        </li>
       </div>
     )
   }
@@ -546,9 +546,9 @@ let VNowPlaying = React.createClass({
         <Header.Proxy title='Now playing' primaryOnTap={this.gotoPreviousView} />
 
         <p className='playing'>{playing}</p>
-        <div className='list-item'>
+        <li>
           {unplayed}
-        </div>
+        </li>
       </div>
     )
   }
