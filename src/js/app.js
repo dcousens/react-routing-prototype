@@ -1,4 +1,5 @@
 let React = require('react')
+let ReactDOM = require('react-dom')
 let Timers = require('react-timers')
 
 let Header = require('./Header')
@@ -613,7 +614,7 @@ let App = React.createClass({
 
 // Start-up
 function startApp () {
-  React.render(<App />, document.getElementById('app'))
+  ReactDOM.render(<App />, document.getElementById('app'))
 }
 
 // native? wait for deviceready

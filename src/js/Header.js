@@ -1,4 +1,4 @@
-let React = require('react/addons')
+let React = require('react')
 // let CSSTransitionGroup = React.addons.CSSTransitionGroup
 
 module.exports = React.createClass({
@@ -50,17 +50,17 @@ module.exports = React.createClass({
 
     return (
       <div className='Header'>
-        <div className='Header__group Header__button' component='div'>
+        <div className='Header__group Header__button'>
           {primary}
         </div>
 
-        <div className='Header__group' component='div'>
+        <div className='Header__group'>
           <div className='Header__text'>
             {title}
           </div>
         </div>
 
-        <div className='Header__group Header__button' component='div'>
+        <div className='Header__group Header__button'>
           {secondary}
         </div>
       </div>

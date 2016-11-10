@@ -17,11 +17,11 @@
   "dependencies": {
     "blacklist": "^1.1.2",
     "classnames": "^2.0.0",
-    "cordova-dialogs": "^1.0.0",
     "lorem-ipsum": "^1.0.3",
-    "react": "^0.13.3",
-    "react-sentry": "^1.0.2",
-    "react-tappable": "0.6.0",
-    "react-timers": "^5.0.0"
+    "react": "*",
+    "react-dom": "^15.3.2",
+    "react-sentry": "*",
+    "react-tappable": "*",
+    "react-timers": "*"
   }
 }

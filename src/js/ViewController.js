@@ -1,6 +1,4 @@
-let React = require('react/addons')
-let CSSTransitionGroup = React.addons.CSSTransitionGroup
-
+let React = require('react')
 let classnames = require('classnames')
 
 let ViewController = React.createClass({
@@ -96,8 +94,7 @@ let ViewController = React.createClass({
       targetViewProps = pathProps
     }
 
-    // FIXME: use React.cloneElement in React 0.14 (owner context issue)
-    let toRender = React.addons.cloneWithProps(foundTarget, {
+    let toRender = React.cloneElement(foundTarget, {
       key: targetViewName,
       viewProps: targetViewProps
     })
@@ -105,9 +102,9 @@ let ViewController = React.createClass({
     let transitionClassName = classnames('ViewController', 'ViewController--' + name)
 
     return (
-      <CSSTransitionGroup className={transitionClassName} transitionName={transition} component='div'>
-        {toRender}
-      </CSSTransitionGroup>
+//       <CSSTransitionGroup className={transitionClassName} transitionName={transition} component='div'>
+      <div className={transitionClassName}>{toRender}</div>
+//       </CSSTransitionGroup>
     )
   },
 

@@ -3,7 +3,7 @@ let React = require('react')
 let View = React.createClass({
   propTypes: {
     name: React.PropTypes.string.isRequired,
-    component: React.PropTypes.element.isRequired,
+//     component: React.PropTypes.element.isRequired,
     viewProps: React.PropTypes.object
   },
 
@@ -11,6 +11,7 @@ let View = React.createClass({
   getChildContext () { return { viewName: this.props.name } },
 
   render () {
+    console.log(this.props)
     let { name, component: ViewComponent, viewProps } = this.props
     let viewClassName = 'View View--' + name
 

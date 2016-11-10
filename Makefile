@@ -18,7 +18,6 @@ build-js: node_modules www/js/react.js
 	mkdir -p www/js
 	$(BROWSERIFY) src/js/app.js \
 		--external react \
-		--external react/addons \
 		--transform babelify \
 		--transform brfs \
 		--outfile www/js/app.js \
@@ -28,7 +27,6 @@ www/js/react.js: node_modules
 	mkdir -p www/js
 	$(BROWSERIFY) \
 		--require react \
-		--require react/addons \
 		--outfile www/js/react.js
 
 build-less: www/css/app.css
@@ -55,7 +53,6 @@ watch-js: node_modules www/js/react.js
 	mkdir -p www/js
 	$(WATCHIFY) src/js/app.js \
 		--external react \
-		--external react/addons \
 		--transform babelify \
 		--transform brfs \
 		--outfile www/js/app.js \
