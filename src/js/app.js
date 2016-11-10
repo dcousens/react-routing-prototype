@@ -37,7 +37,12 @@ let VSignin = React.createClass({
     className: React.PropTypes.string
   },
 
-  gotoBrowser () { this.transitionTo('application/main/browser', {}, 'view-transition-fade') },
+  gotoLogin () {
+    this.transitionTo('application/passcode', {
+      nextPath: 'application/main/browser',
+      nextPathProps: {}
+    }, 'view-transition-fade')
+  },
   gotoLogout () { this.transitionTo('application/logout', {}, 'view-transition-reveal-from-bottom') },
 
   render () {
@@ -45,10 +50,35 @@ let VSignin = React.createClass({
 
     return (
       <div className={className}>
-        <Header title='Prototype'/>
+        <Header title='Prototype' />
         <li>
-          <button onClick={this.gotoBrowser}>Enter</button>
+          <button onClick={this.gotoLogin}>Login</button>
           <button onClick={this.gotoLogout}>Logout (invalid link)</button>
+        </li>
+      </div>
+    )
+  }
+})
+
+let VPasscode = React.createClass({
+  mixins: [mixins.Routing],
+
+  propTypes: {
+    className: React.PropTypes.string,
+    nextPath: React.PropTypes.string.isRequired,
+    nextPathProps: React.PropTypes.object.isRequired
+  },
+
+  gotoNext () { this.transitionTo(this.props.nextPath, this.props.nextPathProps, 'view-transition-fade') },
+
+  render () {
+    let { className } = this.props
+
+    return (
+      <div className={className}>
+        <Header title='Passcode' />
+        <li>
+          <button onClick={this.gotoNext}>*</button>
         </li>
       </div>
     )
@@ -131,8 +161,8 @@ let VAbout = React.createClass({
 
     return (
       <div className={className}>
-        <Header { ... this.state.headerProps } />
-        <ViewController name='about' defaultPath='/menu' { ... otherProps } >
+        <Header {... this.state.headerProps} />
+        <ViewController name='about' defaultPath='/menu' {... otherProps}>
           <View name='menu' component={VAboutMenu} />
           <View name='eula' component={VEULA} />
           <View name='privacy' component={VPrivacy} />
@@ -255,7 +285,7 @@ let VArtists = React.createClass({
 
     return (
       <div className={className}>
-        <ViewController name='artists' defaultPath='/list' { ... otherProps }>
+        <ViewController name='artists' defaultPath='/list' {... otherProps}>
           <View name='list' component={VArtistList} />
           <View name='detail' component={VArtistDetail} />
         </ViewController>
@@ -372,7 +402,7 @@ let VPlaylists = React.createClass({
 
     return (
       <div className={className}>
-        <ViewController name='playlists' defaultPath='/list' { ... otherProps }>
+        <ViewController name='playlists' defaultPath='/list' {... otherProps}>
           <View name='list' component={VPlaylistList} />
           <View name='detail' component={VPlaylistDetail} />
         </ViewController>
@@ -567,7 +597,7 @@ let VMain = React.createClass({
 
     return (
       <div className={className}>
-        <Header { ... this.state.headerProps } />
+        <Header {... this.state.headerProps} />
         <ViewController name='main' defaultPath='/browser' {... otherProps}>
           <View name='browser' component={VBrowser} />
           <View name='now-playing' component={VNowPlaying} />
@@ -602,8 +632,9 @@ let App = React.createClass({
     console.info('Application path:', this.state.currentPath)
 
     return (
-      <ViewController name='application' defaultPath='/error' { ... this.state } >
+      <ViewController name='application' defaultPath='/error' {... this.state} >
         <View name='about' component={VAbout} />
+        <View name='passcode' component={VPasscode} />
         <View name='error' component={VError} />
         <View name='main' component={VMain} />
         <View name='signin' component={VSignin} />
